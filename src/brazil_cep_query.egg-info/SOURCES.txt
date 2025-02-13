@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/brazil_cep_query.egg-info/PKG-INFO
+src/brazil_cep_query.egg-info/SOURCES.txt
+src/brazil_cep_query.egg-info/dependency_links.txt
+src/brazil_cep_query.egg-info/requires.txt
+src/brazil_cep_query.egg-info/top_level.txt
+src/utils/__init__.py
