@@ -26,10 +26,11 @@ jobs:
     - name: Install Render CLI
       run: |
         curl -fsSL https://cli.render.com/install.sh | bash
+        export PATH=$PATH:/opt/render
 
     - name: Deploy to Render
       env:
         RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
       run: |
-        render login --api-key $RENDER_API_KEY
-        render deploy
+        /opt/render/bin/render login --api-key $RENDER_API_KEY
+        /opt/render/bin/render deploy
