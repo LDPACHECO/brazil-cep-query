@@ -23,14 +23,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
     - name: Install Render CLI
       run: |
-        curl -fsSL https://cli.render.com/install.sh | bash
-        echo "/opt/render/bin" >> $GITHUB_PATH
+        npm install -g @render/cli
 
     - name: Deploy to Render
       env:
         RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
       run: |
-        render login --api-key $RENDER_API_KEY
-        render deploy
+        npx render login --api-key $RENDER_API_KEY
+        npx render deploy
