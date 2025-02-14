@@ -63,7 +63,7 @@
     <script>
         function consultarCep() {
             const cep = document.getElementById('cep').value;
-            fetch(`http://127.0.0.1:5000/cep/${cep}`)
+            fetch(`https://seu-app.onrender.com/cep/${cep}`)
                 .then(response => response.json())
                 .then(data => {
                     const resultDiv = document.getElementById('result');
