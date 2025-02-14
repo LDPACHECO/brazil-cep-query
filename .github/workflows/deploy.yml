@@ -36,5 +36,5 @@ jobs:
       env:
         RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
       run: |
-        railway login --token $RAILWAY_API_TOKEN
+        echo $RAILWAY_API_TOKEN | railway login --token
         railway up --detach
